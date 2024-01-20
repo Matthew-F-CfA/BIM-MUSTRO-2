@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+<TITLE>
+The StratImage Editor Package(bim.rpg.imagescan)
+</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+The applications in the imagescan package can be used to create StratImages which can be
+added into the MUSTRO image archives and then used in the construction kit. Just
+create the StratImages then add them to the install/image/* directories then
+initialize the MUSTRO kit as if nothing had been changed.
+StratImages are scaled to fit a computer's platform dependent screen size at installation.
+
+Classes:
+  bim.rpg.imagescan.StratImageDrawer
+    Used for drawing StratImages.
+
+  bim.rpg.imagescan.StratImageDrawer2
+    Used for drawing StratImages. Has less drawing space than StratImageDrawer because
+    the north, east, south, and west edges can have other StratImages loaded into them
+    for drawing images that are adjacent to each other and need to have seamless edges.
+
+  bim.rpg.imagescan.StratImageOverlayer
+    Allows several StratImages to be loaded and overlapped and then saved.
+
+  bim.rpg.imagescan.StratImageSerializer
+    Allows StratImages to be loaded and then have certain colors made translucent
+    and then saved.
+
+  bim.rpg.imagescan.StratImageToJPGConverter
+    Convert StratImages to jpeg files.
+
+  bim.rpg.imagescan.ToolkitCreateImageConverter
+    Load jpegs from an URL and convert it to a StratImage.
+
+  bim.rpg.imagescan.ToolkitCreateImageConverterFrame
+    Used in conjunction with ToolkitCreateImageConverter
+
+
+Detailed Instructions for bim.rpg.imagescan.StratImageDrawer, bim.rpg.imagescan.StratImageDrawer2,
+and bim.rpg.imagescan.ToolkitCreateImageConverterFrame:
+If you are creating images to be used in MUSTRO be sure to
+create the image data file(the image data file is the file that is
+identified by the second input text dialog after clicking "Convert
+Image") in the MUSTRO directories:
+  data/image/creature
+  data/image/character
+  data/image/area
+  data/image/other
+
+Creating the image data file in a different directory and moving
+it to one of the data/image/* directories will not be sufficient
+for installing the image and may even totally prevent installation.
+
+Secondly the main image file(the main image file is the file that is
+identified by the first input text dialog after clicking "Convert
+Image") can be created in any directory, but if it is to be used
+in MUSTRO it must be moved to the install/image/*/serialized/
+directory that it is to be used in.
+
+Example:
+You might be creating a creature named "dragon2" and your MUSTRO
+construction kit is located in the directory "c:\mustrokit" so heres what
+you do.
+"click" "Convert Image". The first input text dialog pops up.
+Type in the name for the main image file:
+  "c:\mustrokit\install\image\creature\serialized\dragon2"
+"click" "Done"
+if the file does not exist a new file with the name you entered is created.
+Next another input text dialog pops up.
+Type in the name for the image data file:
+  "data\image\creature\dragon2"
+"click" "Done"
+if the file does not exist a new file with the name you entered is created and
+then the image is converted to a StratImage ready to be installed into the
+MUSTRO kit.
+If the MUSTRO kit has already been installed, you will need to install the new
+image into the MUSTRO kit. This is done by executing the following from the
+directory where MUSTRO is installed:
+  java bim.rpg.install.SingleImageInitializer
+Instructions will be provided after executing the above command.
+
+
+
+Note 2: If you are creating character StratImages for MUSTRO.
+The naming convention for character StratImages in MUSTRO is specific.
+There are three types of character images. The first is the "head" image.
+This image is the head of the character. The second is the "body" image.
+This image is the whole body of the character except for the head.
+Right now MUSTRO provides support for only one "body" image.
+The third is the "combined" image. This image is a "body" image combined
+with a "head" image(the bim.rpg.imagescan.StratImageOverlayer can help with this part).
+Multiple "head" images may be created and combined with the single "body" image.
+The naming conventions are as follows:
+  The "head" images must start with "bodyhead".
+    Example:
+      bodyheaddragon
+
+  The only "body" image supported at this time is "bodywhole".
+
+  The "combined" images must start with the name of the "head" image to
+    be used. Then a "`" is added. Then the name of the "body" image is
+    appended.
+    Example:
+      bodyheaddragon`bodywhole
+</PRE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<A HREF="table_of_contents.html">Back to the Table of Contents</A>
+</BODY>
+</HTML>

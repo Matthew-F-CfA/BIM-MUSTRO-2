@@ -1,0 +1,452 @@
+<HTML>
+<HEAD>
+<TITLE>
+The Creatures of MUSTRO
+</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+There are two types of characters in MUSTRO. The character is one and the creature is the
+other. The character is the character played by a human using a computer console. The
+creature is a character controlled by artifical intelligence. Character and creature
+will be used interchangably throughout these help files to refer to characters
+in general, but there are a couple of differences between the human played and the
+artifical. The human played character has a class(fighter, healer, sorceror, etc)
+which has skills and spell defined for it. The artifical character doesn't have skills
+and spells. The human played character can advance in level making it more powerful as
+time passes and experience is gained. Other than these characteristics the human
+and artificial creatures are the same, so the help files will use "characters" to
+identify both human and artificial characters.
+Here is a general idea of what Characters are made of:
+  <A HREF="#race">Race</A>
+    The physical attributes of the race. The height, ability to connect when it
+    attempts to attack something, damage inflicted when contact is made, natural
+    armor, magic consistancy, and racial advantages and disadvantages.
+
+  <A HREF="#class">Class</A>
+    The profession that the creature is practicing. The skills and spells, health
+    gained per level, number of swings per attack, and class based advantages and
+    disadvantages(no class based advantages or disadvantages at this time).
+
+  <A HREF="#stats">Statistics</A>
+    The creatures physical, mental, and luck ratings.
+
+  <A HREF="#equip">Equipment</A>
+    13 equipment locations from head to foot.
+
+  <A HREF="#level">Level</A>
+    The expertise earned by the creature.
+
+  <A HREF="#affects">Affects</A>
+    The affects that skills and spells can cause.
+</PRE>
+<BR>
+<BR>
+<BR>
+<A NAME="race">Race</A>
+<PRE>
+The height of a character determines several combat attributes. The first is reach.
+Reach is the distance that a character can attack. Every 8 feet of height adds
+an extra block of distance that a character can attack(NOTE:reach has currently
+been disabled; a character must be one block away to attack). The height of a character
+also helps avoid attacks. The amount of dodgability provided by size depends
+on the size of the defender compared to the size of the attacker. The size of
+a character affects the equipment that a character can equip.
+Natural armor provided by race can be associated with how much damage is done
+to a character when it is hit.
+Magic consistancy has to do with magic weapons. If a character has a magic
+consistancy of 3 then in order for a weapon to hit the character the weapon
+will need to have +3 attack or greater to even have a chance of hitting. Another
+thing to note is that just because a character may not be able to physically hit
+a character with a magic consistancy does not mean that the character can not use
+a skill or spell to do the job. Magic consistancy has no affect on skills or spells.
+The racial attack and damage only count when the character is not holding something
+else in its hands. If using hands as weapons than the magical consistancy is
+measured against the racial hand attack.
+</PRE>
+<BR>
+<BR>
+<A NAME="class">Class</A>
+<PRE>
+The health gained per level is determined by the class. The following table has the gains:
+</PRE>
+<TABLE BORDER="1">
+<COLGROUP>
+<COL WIDTH="*1"><COL WIDTH="*1"><COL WIDTH="*1">
+</COLGROUP>
+<TR><TH>Class</TH><TH>Minimum</TH><TH>Maximum</TH></TR>
+<TR><TD>Fighter</TD><TD>4</TD><TD>8</TD></TR>
+<TR><TD>Barbarin</TD><TD>6</TD><TD>9</TD></TR>
+<TR><TD>Archer</TD><TD>3</TD><TD>6</TD></TR>
+<TR><TD>Thief</TD><TD>2</TD><TD>6</TD></TR>
+<TR><TD>Healer</TD><TD>2</TD><TD>5</TD></TR>
+<TR><TD>Illusionist</TD><TD>1</TD><TD>4</TD></TR>
+<TR><TD>Conjurer</TD><TD>1</TD><TD>4</TD></TR>
+<TR><TD>Sorceror</TD><TD>1</TD><TD>3</TD></TR>
+<TR><TD>Ranger</TD><TD>3</TD><TD>7</TD></TR>
+</TABLE>
+<BR>
+The number of swings per attack is described in the following table by level:
+<BR>
+<TABLE BORDER="1">
+<COLGROUP>
+<COL WIDTH="*1"><COL WIDTH="*1"><COL WIDTH="*1"><COL WIDTH="*1">
+</COLGROUP>
+<TR><TH>Class</TH><TH>Two</TH><TH>Three</TH><TH>Four</TH></TR>
+<TR><TD>Fighter</TD><TD>15</TD><TD>35</TD><TD>-</TD></TR>
+<TR><TD>Barbarian</TD><TD>10</TD><TD>30</TD><TD>50</TD></TR>
+<TR><TD>Archer</TD><TD>25</TD><TD>40</TD><TD>-</TD></TR>
+<TR><TD>Thief</TD><TD>25</TD><TD>45</TD><TD>-</TD></TR>
+<TR><TD>Healer</TD><TD>30</TD><TD>50</TD><TD>-</TD></TR>
+<TR><TD>Illusionist</TD><TD>30</TD><TD>-</TD><TD>-</TD></TR>
+<TR><TD>Conjurer</TD><TD>30</TD><TD>-</TD><TD>-</TD></TR>
+<TR><TD>Sorceror</TD><TD>35</TD><TD>-</TD><TD>-</TD></TR>
+<TR><TD>Ranger</TD><TD>20</TD><TD>40</TD><TD>-</TD></TR>
+</TABLE>
+<BR>
+<BR>
+<A NAME="stats">Statistics</A>
+<PRE>
+The statistics ranges are as follows:
+  Terrible: 1-15
+  Bad: 16-25
+  Mediocre: 26-30
+  Good: 31-45
+  Great: 46-65
+  God-like: 66-70
+Statistics are almost always measured against an opponent's statistics except
+when determining how an item's weight might be carried or not and resisting
+a skill or spell affect. Separate from resisting an affect many affects power
+are determined by comparing the stats of the affected to the stats of the affector.
+In this case it depends on the primary and secondary(if one exists) stats that
+are assigned to a skill or spell at creation time. I recommend that you create
+a variety of skills and spells that use a variety of prime and second stats
+in order to balance the characters who focus on stats with the characters
+who choose Advantages at creation time. Another note is that I created
+the barbarian class to be a brute force class and that if you give them
+too many skills that they may be unstoppable, so it is up to you to
+take precautions if any are needed. The prime and second stat also affect
+whether a character loses concentration of a skill or spell if distracted while
+preparing to use it. For spells only the prime stat is always intelligence and
+the second stat is always wisdom.
+Here are some basic definitions of the stats and their properties:
+  Strength: Affects how hard a character hits and also how much a character can carry
+    including how heavy a weapon the character may wield. Also, affects damage bonus
+    for characters with a sufficiently high strength at character creation. The bonus
+    is as follows: Strength of 31 = +2, Strength of 46 = +5, Strength of 66 = +11.
+    The damage bonus is applied for all physical attacks including hand to hand.
+    Also, applied strength at time of attack affects damage as follows: For each
+    Strength point from 25 to 15 subtract 2%, For each Strength point from 15 to 0
+    subtract 5%, For each Strength point from 30 to 45 add 1.5%, For each Strength
+    point from 45 to 65 add 2%, For each Strength point from 65 to 70 add 4%.
+    
+
+  Dexterity: Affects dodging capability and Reflex Advantage(if the character has it).
+    Also, affects hand to hand attack bonus for determining whether or not a
+    character can hit magically armored creatures. Elves, sprites, and goblins
+    can hit for +1 by default all the other races have +0. If a character has
+    a sufficiently high dexterity at character creation then a gain is applied
+    as follows: Dexterity of 31 = +1, Dexterity of 46 = +2, Dexterity of 66 = +3.
+    So, a human with dexterity 66 will have +3 attack and an elf with 46 will also
+    have +3 attack because of the +1 default for elves.
+    Also, dodge bonus for attacker vs defender is calculated as follows: If attacker
+    dexterity is higher than defender dexterity then -1.5% dodge for each point between
+    20 and 30 above and -1.0% dodge for each point between 10 and 20 above and -0.5%
+    dodge for each point between 0 and 10 above, If defender dexterity is higher than
+    attacker dexterity then +1.5% dodge for each point between 20 and 30 above and
+    +1.0% dodge for each point between 10 and 20 above and +0.5% dodge for each point
+    between 0 and 10 above.
+
+  Vitality: Can give bonus health points or subtract(if vitality is low enough)
+    health points at level up. Has an effect on attacks which land exceptional contact.
+    Also, affects recovery of health and stamina over time.
+    If a character has sufficiently high vitality at character creation time then
+    a gain is applied as follows: Vitality of 31 = Stamina +5 and Health +10,
+    Vitality of 46 = Stamina +20 and Health +30, Vitality of 66 = Stamina +50 and
+    Health +80.
+    Health bonus for vitality at level up as follows: For each 10 points above and
+    including 30 a random number chance of 75% that an extra health point gained,
+    For each 5 points below and including 20 a random number chance of 15% that
+    an extra health point lost.
+<!--
+    At character creation also affects height as follows: 
+      RaceHeightMultiplier:
+        Human = 1.0, Elf = 1.4, Dwarf = 0.66, Giant = 3.3, Sprite = 0.35, Goblin = 0.52, Ogre = 2.5
+      RaceHeightBase = 66 Inches
+      VitalityMultiplier:
+        Vitality Less than 7 = 0.7
+        Vitality Less than 10 = 0.8
+        Vitality Less than 15 = 0.9
+        Vitality Less than 20 = 1.0
+        Vitality Less than 30 = 1.05
+        Vitality Less than 40 = 1.1
+        Vitality Less than 50 = 1.2
+        Vitality Less than 60 = 1.3
+        Vitality Less than 71 = 1.4
+      Absolute Height = RaceHeightMultiplier * RaceHeightBase * VitalityMultiplier
+-->
+
+  Resilience: Helps character resist effects or at least withstand some of the effects
+    properties. Also affects recovery of health and stamina over time.
+    If a character has sufficiently high resilience at character creation time then
+    a gain is applied as follows: Resilience of 31 = +15 natural armor, Resilience of
+    46 = +35 natural armor, Resilience of 66 = +65 natural armor.
+
+  Wisdom: Affects the amount of magic regained over time. If wisdom is high enough
+    it can also have great effects on the concentration time needed to cast a spell.
+    If a character has sufficiently high wisdom at character creation time then
+    a gain is applied as follows: Wisdom of 31 = +5 magic, Wisdom of 46 = +20 magic,
+    Wisdom of 66 = +40 magic.
+
+  Intelligence: The prime stat for casting spells. It can also have an affect
+    on concentration time needed to cast a spell.
+
+  Luck: The stat of all trades. Luck has an impact on many things. They include
+    dodging, exceptional contact hits, and resisting affects.
+    On each physical attack a percentage modifier is calculated depending on
+    the luck of the attacker vs the luck of the defender it is calculated as
+    follows: If attacker luck is greater than defender luck then for each 5
+    points difference between attacker luck and defender luck the chance of
+    dodging decreases by 1%, If defender luck is greater than attacker luck
+    then for each 5 points difference between defender luck and attacker luck
+    the chance of dodging increases by 1%.
+    When attempting to resist an affect, for each luck point above 40 increase
+    the chance of resisting the affect by 1%, and for each luck point between
+    40 and 25 increase the chance of resisting the affect by 0.5%.
+
+  Combination:
+    Strength, Vitality, and Luck: Exception contact which lands on 5% of all
+      physical attacks. 
+      For Strength: From 30 to 45 add 3.5% each, From 45 to 65 add 5% each,
+                    From 65 to 70 add 7.5% each
+      For Vitality: From 30 to 45 add 1.75% each, From 45 to 65 add 2.5% each,
+                    From 65 to 70 add 3.75% each
+      For Luck:     From 30 to 45 add 1.75% each, From 45 to 65 add 2.5% each,
+                    From 65 to 70 add 3.75% each
+
+    Vitality, Resilience, Intelligence, and Wisdom: Recovery of health, magic,
+      and stamina at recover tick. Default recovery per tick is health 20%,
+      magic 30%, and stamina 20%.
+      For Vitality: Less than 15 remove 4.8% from health and stamina
+                    Less than 25 remove 1.5% from health and stamina
+                    Greater than 30 add 2% to health and stamina
+                    Greater than 45 add 6% to health and stamina
+                    Greater than 65 add 12% to health and stamina
+      For Resilience: Less than 15 remove 4.8% from health and stamina
+                      Less than 25 remove 1.5% from health and stamina
+                      Greater than 30 add 2% to health and stamina
+                      Greater than 45 add 6% to health and stamina
+                      Greater than 65 add 12% to health and stamina
+      For Intelligence: Less than 15 remove 4.8% from magic
+                        Less than 25 remove 1.5% from magic
+                        Greater than 30 add 2% to magic
+                        Greater than 45 add 6% to magic
+                        Greater than 65 add 12% to magic
+      For Wisdom: Less than 15 remove 4.8% from magic
+                  Less than 25 remove 1.5% from magic
+                  Greater than 30 add 2% to magic
+                  Greater than 45 add 6% to magic
+                  Greater than 65 add 12% to magic
+</PRE>
+<BR>
+<BR>
+<A NAME="equip">Equipment</A>
+<PRE>
+There are 13 equipment locations. They are:
+  holding right
+  holding left
+  head
+  shoulders
+  left arm
+  right arm
+  left hand
+  right hand
+  body
+  waist
+  legs
+  left foot
+  right foot
+
+Weapons may be equipped in holding right, or holding left. Armor can be equipped anywhere.
+If only one weapon is being wielded it should be equipped in holding right because if
+it is equipped in holding left then there will be a dual wield penalty(+40% chance of
+dodging unless character has special advantage dual wield in which case +15% chance
+of dodging) on each attack. Equipment can be one of four sizes. Small, medium, large,
+or extra-large. Bigger weapons do more damage than smaller weapons(or at least the standard
+ones do). This is intentional because it helps balance the smaller characters ability to
+dodge better than the large character, and it also just makes sense for a big weapon to
+do more damage. Items may have advantages or disadvantages contained in them.
+Use them sparingly(or maybe not at all for the advantages that characters can
+choose at creation time because they must spend precious creation points to gain
+these advantages).
+</PRE>
+<BR>
+<BR>
+<A NAME="level">Level</A>
+<PRE>
+The level of a character is its proficiency in its class. The level determines how well
+skills and spells work and also how easily a character can hit and dodge a character.
+Both of these level factors are compared against the opposing characters level to
+figure out who deserves what king of edge.
+</PRE>
+<BR>
+<BR>
+<A NAME="affects">Affects</A>
+<PRE>
+An affect is something that occurs from using a skill or spell. Most of these affects
+can have an affect area matrix defined at creation time. There are a couple exceptions.
+The hide affect can only be used on the character who uses the affect(the character cannot
+hide some other character). Another is the transport affect. The transport affect teleports
+the user of the affect to the target space. An affect has a level attached to it which
+is the level of the user. This level determines the potency of the affect. The affect
+also has a duration. The duration is the amount of times the affect will occur before
+it dissipates naturally. The skill or spell using the affect has a range. This range
+is the distance the target can be aimed at most. There is a concentration time which
+must pass before a skill or spell can be used. This concentration time is equal
+to roughly 2 seconds for every 10 levels for skills and roughly 2 seconds for every
+5 levels for spells. During this time of concentration the user may get distracted
+by being attacked physically or through a skill or spell. Whether concentration is
+lost or not after being hit depends on the percentage of damage done compared to
+the max health of the user and also on the prime stat and second stat of the user.
+If more than 25 percent of the user's health is taken away then concentration will
+be lost for certain.
+
+Here are the affects that are packaged with MUSTRO for use in skills/spells:
+  Damage
+    Damage is inflicted.
+
+  Invisibility
+    Invisibility hides the target from view. There are two types of invisibility.
+    Standard invisibility hides the target from view, but if characters have
+    detect invisibility then they can see through it. Absolute invisibility
+    cannot be detected by anyone(this affect is one of the trade secrets of the
+    illusionist class as are a few other affects that if given to other classes
+    would make an illusionist class absolutely pointless so award the illusion
+    type affects to other classes with care and caution).
+
+  Detect Invisibility
+    See through standard invisibility.
+
+  Poison
+    A combination of poison and damage.
+
+  Cure Poison
+    Remove poison affect.
+
+  Disease
+    A combination of disease and damage. This affect can be transmitted to other characters
+    standing next to an affected character.
+
+  Cure Disease
+    Remove disease affect.
+
+  Blind
+    Remove the ability to see other characters. The character can still see the map. This
+    is because I know that at some point a hacker would find a way around the map removal
+    portion, so it makes sense to remove any exploitable benefit. I am open to suggestions
+    for map removal as well.
+
+  Cure Blind
+    Remove blind affect.
+
+  Paralyze
+    Holds a character at a location until the affect wears off.
+
+  Cure Paralyze
+    Remote the paralyze affect.
+
+  Hide
+    A character can only hide itself. Once hidden no characters will see it. A character
+    can only hide if no other character is in sight. If the character moves then the
+    affect of hiding is removed.
+
+  Levitate
+    The character will float. This will help if travelling over hills or shallow water.
+
+  Bless
+    The blessing helps the affected character resist the affects of harmful skills/spells.
+
+  Heal
+    Heal the character giving it more health.
+
+  Create
+    The calling card of the conjurer. This affect can create a golem, food, armor, or
+    a weapon.
+
+  Created
+    This is an affect that results from the Create affect. It affects a golem.
+
+  False Pain
+    The same as Damage except that a trick is played on the mind of the affected character.
+    When the duration time runs out the affected character will notice that it has been
+    fooled and will notice it is not as badly wounded as suspected(regaining a portion
+    of the health lost from the initial affect).
+
+  Transport
+    Teleport the user to a new location.
+
+  Grab
+    A character can grab another character and hold them to prevent movement to a new
+    location(useful for protecting a concentrating character from being assaulted).
+
+  Flee
+    Forces a character to flee. This affect is not fully implemented for human controlled
+    characters they will not be able to move.
+
+  Illusion
+    The user of this affect will appear to be a character from the archive of character
+    images(only the character image files starting with "creature`Ill`" will be available
+    to the illusion affect).
+
+  Death
+    The death affect attempts to slay the target with a single blow.
+
+  Dispel
+    The dispel affect attempts to remove the blind and/or paralyze affect inflicted on
+    the target.
+
+  Invincible
+    Protects the affected character from all types of harm. However it does not protect
+    against blind, paralyze, or similar affects.
+
+  Silent Cast
+    When affected by this affect a spell user can cast spells without characters within
+    ear shot knowing that a spell has been started. A note for this affect is that
+    there is an advantage that provides the same functionality making it questionable
+    whether this affect should ever be implemented in an affect form, but it is here
+    so use your own judgement.
+
+  Mirror Image
+    Creates mirror images around the target. The number of images created is 2 plus
+    one for every 20 levels of the affect level. This affect may also switch the
+    targets location to a location nearby to further confuse any on lookers.
+
+  Held
+    This affect happens as a result of a successful Grab affect. Both the grabber
+    and the held character will be unable to move.
+
+  Repel
+    The repel affect protects the affected character from physical attacks. The protection
+    saves 25% of the damage that would have harmed the character.
+
+  Influence(currently unavailable)
+    The influence affect prevents a character from harming the user of the influence
+    for the duration of the affect.
+
+  Trap
+    This is an affect which is used on a location. Once set the trap will affect whoever
+    is standing on the location when the recovery time occurs. A trap may only be set
+    if there are no other characters but the user within sight of the target location.
+
+  Force Field
+    This is an affect which is used on a location. A location affected by this will be
+    unpassable(except by transporting, teleporting, etc).
+</PRE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<A HREF="table_of_contents.html">Back to the Table of Contents</A>
+</BODY>
+</HTML>

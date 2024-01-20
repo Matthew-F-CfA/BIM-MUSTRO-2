@@ -1,0 +1,310 @@
+<HTML>
+<HEAD>
+<TITLE>
+The MUSTRO World
+</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+The world of MUSTRO is composed of 2D tiles. Each tile has an image and a set of properties
+which govern its characteristics within the world. The images can be created easily
+using the <A HREF="imagescan.html">bim.rpg.imagescan</A> package included with the MUSTRO construction kit. This
+means that the visualization of the world can be changed without any programming. The properties
+of each tile are stored in bim.rpg.strategy.AreaBlock objects. This means that programming is required
+to change tile properties, but many properties are already included with the MUSTRO kit.
+In this help file the following descriptive words will be used:
+
+
+Listed below are some of the properties available to tiles:
+</PRE>
+<BR>
+<A HREF="#transporter">Transporter</A>
+<BR>
+<BR>
+<A HREF="#nocombat">No Combat</A>
+<BR>
+<BR>
+<A HREF="#nomagic">No Magic</A>
+<BR>
+<BR>
+<A HREF="#fastregen">Fast Regeneration</A>
+<BR>
+<BR>
+<A HREF="#foodhere">Food Here</A>
+<BR>
+<BR>
+<A HREF="#locked">Locked</A>
+<BR>
+<BR>
+<A HREF="#notransport">No Transport</A>
+<BR>
+<BR>
+<A HREF="#lava">Lava</A>
+<BR>
+<BR>
+<A HREF="#shallowwater">Shallow Water</A>
+<BR>
+<BR>
+<A HREF="#deepwater">Deep Water</A>
+<BR>
+<BR>
+<A HREF="#hill">Hill</A>
+<BR>
+<BR>
+<A HREF="#mountain">Mountain</A>
+<BR>
+<BR>
+<A HREF="#darkness">Darkness</A>
+<BR>
+<BR>
+<A HREF="#arena">Arena</A>
+<BR>
+<BR>
+<A HREF="#healer">Healer</A>
+<BR>
+<BR>
+<A HREF="#allowrestrictedtransport">Allow Restricted Transport</A>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<PRE>
+Affects are modifiers that characters place on a tile using a skill or spell.
+Affects that are packaged with MUSTRO:
+</PRE>
+<A HREF="#trap">Trap</A>
+<BR>
+<BR>
+<A HREF="#forcefield">Force Field</A>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<PRE>
+Weather at this time is only represented by images. However at some point
+I would like to make it a force of nature which will play into the combat
+scenario of MUSTRO.
+Weather that is packaged with MUSTRO:
+</PRE>
+<A HREF="#clear">Clear</A>
+<BR>
+<BR>
+<A HREF="#cloud">Cloud</A>
+<BR>
+<BR>
+<A HREF="#rain">Rain</A>
+<BR>
+<BR>
+<A HREF="#snow">Snow</A>
+<BR>
+<BR>
+<A HREF="#fog">Fog</A>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+General Tile Options:
+<BR>
+<BR>
+<A NAME="transporter">Transporter</A>
+<PRE>
+Transports any creature that steps on the tile to a creator-defined location.
+</PRE>
+<BR>
+<BR>
+<A NAME="nocombat">No Combat</A>
+<PRE>
+No combat on this tile. No attacks will affect the character if it is targetted on
+this tile. If a creature is larger than one tile then if the other tiles that
+the creature is on are not nocombat then the creature can be attacked using those
+tiles as targets. Therefore if you want to create a nocombat zone then it is
+recommended that you make a rectangle of tiles nocombat rather than just one(unless
+you only want a creature with the size of one tile to be fully protected).
+</PRE>
+<BR>
+<BR>
+<A NAME="nomagic">No Magic</A>
+<PRE>
+The same as nocombat described above except that it is for magic and even non-
+threatening magic cannot be used(heal, create, etc).
+</PRE>
+<BR>
+<BR>
+<A NAME="fastregen">Fast Regeneration</A>
+<PRE>
+Regenerate health, magic, and stamina at twice the normal rate of recovery.
+</PRE>
+<BR>
+<BR>
+<A NAME="foodhere">Food Here</A>
+<PRE>
+Food is plentiful on this tile and when a character steps on this tile then
+its food is fully regenerated.
+</PRE>
+<BR>
+<BR>
+<A NAME="locked">Locked</A>
+<PRE>
+This tile is locked. The key is an item with a quest id which matches this locks id.
+The creature will not be able to step on this tile unless it possesses the item.
+</PRE>
+<BR>
+<BR>
+<A NAME="notransport">No Transport</A>
+<PRE>
+A transporter, or transport spell will not be able to transport a creature to a tile
+if the tile contains this option. The only exception is if the transporter tile
+contains another option the <A HREF="#allowrestrictedtransport">Allow Restricted Transport</A> option
+if it does contain both options then it will be able to transport to a tile with No Transport.
+</PRE>
+<BR>
+<BR>
+<A NAME="lava">Lava</A>
+<PRE>
+A creature will not be able to step on a tile that contains this option. At this time
+it has the same functionality as making a tile unenterable at creation time. However
+if a programmer should desire to change around functionality for damage by step
+or anything like that it would not be hard.
+</PRE>
+<BR>
+<BR>
+<A NAME="shallowwater">Shallow Water</A>
+<PRE>
+Requires a certain amount of stamina to cross this tile with this option(or a levitate
+affect).
+</PRE>
+<BR>
+<BR>
+<A NAME="deepwater">Deep Water</A>
+<PRE>
+Requires a certain amount of stamina and the Swimmer advantage to cross this tile(
+the levitate affect will not work).
+</PRE>
+<BR>
+<BR>
+<A NAME="hill">Hill</A>
+<PRE>
+Requires stamina to navigate the hills. If the creature is afraid of heights(a disadvantage
+provided) then the creature will not be able to move over hills at all unless affected
+by a levitate affect.
+</PRE>
+<BR>
+<BR>
+<A NAME="mountain">Mountain</A>
+<PRE>
+Requires stamina and the Mountainclimber advantage to climb the mountains.
+</PRE>
+<BR>
+<BR>
+<A NAME="darkness">Darkness</A>
+<PRE>
+A creature with the disadvantage Dark Fear will not be able to move over these tiles.
+</PRE>
+<BR>
+<BR>
+<A NAME="arena">Arena</A>
+<PRE>
+Provides support for an arena. The arena tile has a transport into the arena location
+and a transport out of the arena location. A creature can only be transported into
+the arena if more than one creature has chosen to enter the arena and then chosen
+to agree to the arena combatents. If all of the creatures who choose to enter
+the arena also choose to agree to combat with all other creatures in the arena then
+all of the creatures who agreed are transported into the arena. In order to leave
+the arena all combatents still left inside of the arena must disagree to combat.
+Once this happens they will all be transported out. Death in the arena results
+in the same events as death at any other time and place in the realm.
+Some recommendations for the construction of an arena are to build walls
+around the tiles to keep out creatures that do not agree to arena combat. Another
+good idea is to make all tiles that are enclosed in the arena have a <A HREF="#notransport">No Transport</A>
+option to keep creatures from teleporting in. One more note is to be wary of where you place
+tiles with <A HREF="#allowrestrictedtransport">Allow Restricted Transport</A> option so that a transporter does
+not transport an unsuspecting creature into the arena.
+</PRE>
+<BR>
+<BR>
+<A NAME="healer">Healer</A>
+<PRE>
+Heals anyone who moves to this tile rejuvenating health, magic, stamina, and food to maximum.
+</PRE>
+<BR>
+<BR>
+<A NAME="allowrestrictedtransport">Allow Restricted Transport</A>
+<PRE>
+Used in combination with <A HREF="#transporter">Transporter</A> option to allow
+transporting into tiles with <A HREF="#notransport">No Transport</A> option.
+</PRE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+Character Generated Affects:
+<BR>
+<BR>
+<A NAME="trap">Trap</A>
+<PRE>
+A trap is set by characters that will do damage to creatures who are standing on the affected
+tile on each tick(the time when creatures normally recover health, etc) for the duration
+of the trap. A trap may only be set if the tile being trapped is not visible by any
+other creatures in the area except the trap setter.
+</PRE>
+<BR>
+<BR>
+<A NAME="forcefield">Force Field</A>
+<PRE>
+Makes the tile it is placed on unenterable.
+</PRE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+Weather:
+<BR>
+<BR>
+<A NAME="clear">Clear</A>
+<PRE>
+The weather is clear. No change in the image display.
+</PRE>
+<BR>
+<BR>
+<A NAME="cloud">Cloud</A>
+<PRE>
+The weather is cloudy. No change in the image display.
+</PRE>
+<BR>
+<BR>
+<A NAME="rain">Rain</A>
+<PRE>
+There are rain showers on this tile. An image is used to represent the rain.
+</PRE>
+<BR>
+<BR>
+<A NAME="snow">Snow</A>
+<PRE>
+There are snow showers on this tile. An image is used to represent the snow.
+</PRE>
+<BR>
+<BR>
+<A NAME="fog">Fog</A>
+<PRE>
+There is fog on this tile. An image is used to represent the fog. This fog may be used
+to conceal creatures or whatever is on the tile.
+</PRE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<A HREF="table_of_contents.html">Back to the Table of Contents</A>
+</BODY>
+</HTML>

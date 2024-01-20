@@ -1,0 +1,329 @@
+<HTML>
+<HEAD>
+<TITLE>
+Using the Construction Kit
+</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+The world creation package is contained within the "bim/rpg/construction" directory.
+The MUSTRO kit must be installed for tools to work properly. For installation help
+see <A HREF="start_up.html">application start up</A>. All tools should be started
+up from the directory where the MUSTRO kit is installed too(this is because the
+applications use relative file path names).
+The tools provided are as follows(listed in the recommended cronological order for
+world creation):
+  <A HREF="#quest_builder">Quest Builder</A>
+
+  <A HREF="#item_builder">Item Builder</A>
+
+  <A HREF="#skillnspell_builder">Skill and Spell Builder</A>
+
+  <A HREF="#creature_builder">Creature Builder</A>
+
+  <A HREF="#area_builder">Area Builder</A>
+
+  <A HREF="#storm_builder">Storm Builder</A>
+
+  <A HREF="#time_setter">Virtual World Time/Calendar Setter</A>
+
+  <A HREF="#master_setter">Virtual World Master Account Setter</A>
+
+  <A HREF="#character_builder">Character Builder</A>
+
+
+
+
+
+
+<A NAME="quest_builder">Quest Builder</A>
+Create quests: set name, quest ID, quest points award, and quest level.
+
+
+
+
+
+
+<A NAME="item_builder">Item Builder</A>
+Executed using this command at the prompt: java bim.rpg.construction.ItemBuilder
+The item builder is used for creating items that can be put into the virtual world.
+This is done by giving the items created to creatures that will be inserted into the
+world(using the Creature Builder) or by placing the item on the ground in the virtual
+world(using the Area Builder). There are a few notes on information which is associated
+with item information just below the descriptions of the item types.
+There are three types of items.
+  The Standard Item:
+    This type of item can not be equipped by a creature. At this time its primary use
+    is for quest items, keys, or role-play. A standard item allows the creator to
+    define traits such as item name, item id, weight, volume, value, advantages for
+    the character, and disadvantages for the character(although these last two qualities
+    are only in affect if the item is equipped which can only be done with Weapon and
+    Armor Items).
+
+  The Weapon Item:
+    The weapon item is an item which is held in the hands of a creature and wielded.
+    Along with the traits of the standard item the weapon offers new traits including
+    size(see Note 1), type of weapon(see Note 2), reach(see Note 3), damage(see Note 4),
+    equip locations(see note 5). Also a weapon's weight will determine if a creature
+    has the strength statistic(see Note 8) high enough to wield the weapon.
+
+  The Armor Item:
+    The armor item is an item which is equipped on one or more parts of a creatures body.
+    Along with the traits of the standard item the armor offers new traits including
+    size(see Note 1), pierce defense(see Note 6), slash defense(see Note 6), bash
+    defense(see Note 6), dodge penalty(see Note 7), and equip locations(see note 5).
+
+
+Note 1. Size:
+  MUSTRO supports 4 different sizes. Small, Medium, Large, Extra-Large. A creature can
+  only equip an item if it is the same size rating.
+  The sizes of character races(races for human controlled creatures) provided by 
+  MUSTRO are as follows:
+    Human=Medium
+    Elf=Medium
+    Dwarf=Small
+    Giant=Extra-Large
+    Sprite=Small
+    Goblin=Small
+    Ogre=Large
+
+
+Note 2. Weapon Types:
+  There are three types of weapons. Pierce(dagger, spear, etc), slash(sword, axe, etc),
+  bash(club, mace, etc). Certain armor protects better against different types of weapons.
+
+
+Note 3. Reach:
+  Reach is the length of the weapon. A longer weapon can reach targets which are farther
+  away from the wielder of the weapon.
+
+
+Note 4. Damage:
+  A weapon's damage is defined as a low amount and a high amount. The damage done to
+  a creature that is struck by the weapon is an amount between the low amount and the
+  high amount(this is not including damage that may be absorbed by armor).
+
+Note 5. Equip Locations:
+  An equippable item can be equipped in one or more locations.
+  Here is a list of the equip locations supported by MUSTRO:
+    Holding Right
+    Head
+    Shoulders
+    Torso(the abdomen and chest)
+    Left Arm
+    Right Arm
+    Left Hand
+    Right Hand
+    Waist
+    Legs(Both legs are one equip location)
+    Left Foot
+    Right Foot
+    Holding Left
+
+  Weapons are equipped to holding right and/or holding left. Armor is equipped to
+  any location except holding right.
+
+
+Note 6. Armor Defense Ratings:
+  Each piece of armor has three defense ratings. They are pierce, slash, and bash.
+  The higher the rating for a type the better protection the armor has against that type.
+  At this time MUSTRO's calculation of protection afforded by a rating is as follows:
+    if defenderStyle is CharObstacle.COMBATDEFENSIVE
+      if defenderIntensity is CharObstacle.COMBATMODERATE
+        x=rating * 1.5
+      else if defenderIntensity is CharObstacle.COMBATAGGRESSIVE
+        x=rating * 2.0
+    else if defenderStyle is CharObstacle.COMBATOFFENSIVE
+      if defenderIntensity is CharObstacle.COMBATMODERATE
+        x=rating * 0.5
+      else if defenderIntensity is CharObstacle.COMBATAGGRESSIVE
+        x=rating * 0.25
+    x=x / 10
+    x=random number from 25 percent to 100 percent of x
+    x=amount of damage absorbed by the armor
+
+
+Note 7. Dodge Penalty:
+  Equipping armor usually gives the creature equipping the item a harder time of dodging
+  attacks. The dodge penalty is the rating describing this hinderance. A piece
+  of equipment with a dodge penalty of 3 would give the creature equipping this item
+  a -3 percent chance of dodging attacks. The hit/miss determining system implemented
+  by MUSTRO has several factors which come into play with dodging including level of
+  the creature attacking vs level of the creature dodging, dexterity stat of the two quarreling
+  creatures, and size of the two creatures(smaller creatures have a better chance of avoiding
+  attacks from larger creatures), and each creature has a base dodge chance of 15 percent(
+  so a creature with no dodge penalties that is the same level, size, dexterity as the
+  attacking creature has a 15 percent chance of dodging an attack).
+
+
+Note 8. Weapon Weight and Wielding:
+  A weapon's weight determines who can wield the weapon. The heavier a weapon is the higher
+  strength stat that is needed to wield the weapon. Calculating if a creature with a certain
+  strength can wield a weapon is done by the following:
+    All creatures can wield 9 pounds of weight. Now for every 2 points above 29 and below 45
+    that the creature has 1 pound of wieldable weight is added. For every point above 44
+    and below 65 1 pound is added. For every point above 64 and below 70 2 pounds is added.
+    The number of pounds after this procedure is the max weight that the creature can wield.
+
+    For example:
+      A creature with 36 strength can wield a weight of 12 pounds(9 base + 3 points because
+      for every 2 points over 29 the creature gains an extra pound of wieldable weight).
+      The max weight wieldable is 46 pounds which is possible for a strength of 70.
+
+
+
+
+
+
+<A NAME="skillnspell_builder">Skill and Spell Builder</A>
+Executed using this command at the prompt: java bim.rpg.construction.SkillNSpellBuilder
+The skill and spell builder is used to create skills, spells, and affects.
+Affects are things that happen when a skill or spell is used(for example the healing of
+a friend or a fireball plummeting towards a foe). A description of affects implemented by
+MUSTRO can be viewed <A HREF="creatures.html#affects">here</A>. Every skill/spell has an affect, matrix, level, range,
+cost, and duration. Skills also have a primary stat and may have a secondary stat(spells
+have a set primary stat. Intelligence. and a set secondary stat. Wisdom.).
+
+
+Matrix:
+  The matrix of a skill/spell is the area that it affects upon detonation. This may be one
+  block or multiple blocks wide. In the builder the matrix appears at the top of the screen.
+  Black blocks are blocks that are not affected by the detonation and red blocks are blocks
+  that are affected. If all of the blocks are black then a gaussian distribution(this can
+  be described as a distribution where the affect is most likely to strike at the center
+  of the detonation area, but could also strike outside of the detonation area with chances
+  of affecting a block dissipating more and more with each block farther from the center
+  of the detonation area) is applied for a number of times that is equal to the number
+  of blocks in the detonation area. The center of the detonation are will be the block which
+  the skill/spell is targeted on upon use.
+
+Level:
+  The level required to use this skill/spell.
+
+Range:
+  The max distance from the user that this skill/spell can be targetted on.
+
+Cost:
+  The cost of skill/spell use. This is not set using the builder. Instead MUSTRO sets this
+  at the time of use and the cost will depend on the level of the user compared to the level
+  of the skill/spell. Primary and secondary stat for skill/spell may also affect this.
+
+Duration:
+  The number of times the affect will happen before the affect dissapears.
+
+Primary and Secondary Stats:
+  The stats for a skill/spell determine what stats are useful for a particular skill/spell.
+  These stats will be used at affect time to figure out the potency of the affect. When
+  the affect takes place these stats are taken from the user of the skill/spell and the
+  target of the skill/spell(when applicable) then they are compared against each other
+  to obtain the actual force of the affect.
+
+
+
+
+
+
+<A NAME="creature_builder">Creature Builder</A>
+Executed using this command at the prompt: java bim.rpg.construction.CreatureBuilder
+The creature builder provides an interface to create creatures. For information on
+creatures' structure <A HREF="creatures.html">click here</A>. Most of the information given in that document
+applies to the creature builder.
+
+The creature behavior editor has been removed from MUSTRO.
+The creature builder provides a creature behavior editor. A creature's behavior
+describes how it reacts in combat. A creature's behavior depends on how much health,
+magic, and stamina it has at the time it needs to make a decision. The decisions it
+may make include:
+  attacking with hands or weapon
+  fleeing
+  using a skill/spell(when using this decision the creature may target for self, closest, or most)
+
+A Creature may have its statistics randomized and/or its equipment randomized. If the statistics
+are randomized then the stats(strength, dexterity, vitality, resilience, wisdom, intelligence, luck)
+are set to a standard number depending on the creatures level and the setting(terrible, bad,
+mediocre, good, great, god-like) prescribed to it at creation. If the equipment is randomized
+then at server initialization a random set of equipment is given to the creature and a new
+set of equipment is given to the creature each time it is slain. The randomly assigned equipment
+will grow in power with the level of the creature(randomly generated equipment can have
+magical affects such as bonuses to attack, damage, and defense).
+A creature's personality will determine if it will attack something that enters its
+combat zone. A good or neutral creature will not attack anything unless it is attacked.
+An evil creature will only attack player characters or creatures created by player characters.
+
+
+
+
+
+
+<A NAME="area_builder">Area Builder</A>
+Executed using this command at the prompt: java bim.rpg.construction.AreaBuilder
+The area builder allows the creator to make a map and to put everything created using
+the methods already discussed into the layout of the world. For more information on
+the world <A HREF="world.html">click here</A>. Also it is at this point where quests are inserted into the development
+cycle. Quests can be slay the monster, or find and retrieve the item style. Another
+fact to note is that blocks which are locked and require a key use a quest item
+as a key(although no quest points are involved with the key item unless the key is
+also part of a find and retrieval quest). It is the key's quest id that is used
+to determine if the key matches the lock. After an area is created it is placed into the
+"uninitializedareas" directory by using the menu item "Save Area". The area is not actually
+inserted into the world until the menu item "Insert Area into Game World" is used. 
+
+
+
+
+
+
+<A NAME="storm_builder">Storm Builder</A>
+Executed using this command at the prompt: java bim.rpg.construction.StormBuilder
+The storm builder creates storms and is fairly simple. At this time a storms only significance
+is that it places a storm image onto the screen and adds to realism.
+
+
+
+
+
+
+<A NAME="time_setter">Time Setter</A>
+Executed using this command at the prompt: java bim.rpg.strategy.TimeSystemThread
+The time setter allows the creator of a realm to assign a unique time/calendar to the
+world. This includes:
+  year number
+  seconds in a minute
+  minutes in a hour
+  hours in a day
+  days in a month
+  months in a year
+
+
+
+
+
+
+<A NAME="master_setter">Master Setter</A>
+Executed using this command at the prompt: java bim.rpg.recovery.MasterSetter
+The master setter allows the creator to specify which user is the master account. The master
+account is the only account that can assign administrator status to users.
+
+
+
+
+
+
+<A NAME="character_builder">Character Builder</A>
+Execution happens remotely by selecting "Generate Character" after bim.rpg.RemoteStarter has
+been executed.
+The character builder is used to create human controlled creatures(characters). The character
+builder is similar to the creature builder except it is more simplified. The only
+differences it has it that each character has 50 creation points to use on statistics
+and/or advantages. If a point is added to stats then a point is subtracted from creation
+points. The same is true for advantages/disadvantages except that they are worth multiple
+points.
+</PRE>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<A HREF="table_of_contents.html">Back to the Table of Contents</A>
+</BODY>
+</HTML>
